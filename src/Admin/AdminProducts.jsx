@@ -15,8 +15,8 @@ import {
 import axios from "axios";
 import toast from "react-hot-toast";
 
-const API_PRODUCTS = "http://localhost:8000/api/products/";
-const API_CATEGORIES = "http://localhost:8000/api/products/categories/";
+const API_PRODUCTS = `${import.meta.env.VITE_BASE_URL}products/`;
+const API_CATEGORIES = `${import.meta.env.VITE_BASE_URL}products/categories/`;
 
 function AdminProducts() {
   const [products, setProducts] = useState([]);

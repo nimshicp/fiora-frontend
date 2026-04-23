@@ -14,8 +14,7 @@ import {
 import axios from "axios";
 import toast from "react-hot-toast";
 
-// 1. Update this to your Django Server URL
-const API_BASE = "http://127.0.0.1:8000/api/admin";
+const API_BASE = `${import.meta.env.VITE_BASE_URL}admin`;
 
 function AdminUsers() {
   const [users, setUsers] = useState([]);

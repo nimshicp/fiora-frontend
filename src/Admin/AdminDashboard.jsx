@@ -21,7 +21,7 @@ import {
   Bar
 } from 'recharts'
 
-const API_BASE = "http://localhost:8000/api/admin";
+const API_BASE = `${import.meta.env.VITE_BASE_URL}admin`;
 
 function AdminDashboard() {
   const [stats, setStats] = useState({})
@@ -129,7 +129,7 @@ function AdminDashboard() {
           <p className="text-gray-500 text-sm">Revenue</p>
           <div className="flex justify-between items-center mt-2">
             <h2 className="text-xl font-bold">
-              ₹{stats.totalRevenue.toLocaleString("en-IN")}
+              ₹{Number(stats.totalRevenue || 0).toLocaleString("en-IN")}
             </h2>
             <IndianRupee className="text-blue-500" />
           </div>
@@ -139,7 +139,7 @@ function AdminDashboard() {
           <p className="text-gray-500 text-sm">Orders</p>
           <div className="flex justify-between items-center mt-2">
             <h2 className="text-xl font-bold">
-              {stats.totalOrders.toLocaleString()}
+              {Number(stats.totalOrders || 0).toLocaleString()}
             </h2>
             <ShoppingBag className="text-green-500" />
           </div>
@@ -149,7 +149,7 @@ function AdminDashboard() {
           <p className="text-gray-500 text-sm">Users</p>
           <div className="flex justify-between items-center mt-2">
             <h2 className="text-xl font-bold">
-              {stats.totalUsers.toLocaleString()}
+              {Number(stats.totalUsers || 0).toLocaleString()}
             </h2>
             <Users className="text-purple-500" />
           </div>
@@ -159,7 +159,7 @@ function AdminDashboard() {
           <p className="text-gray-500 text-sm">Products</p>
           <div className="flex justify-between items-center mt-2">
             <h2 className="text-xl font-bold">
-              {stats.totalProducts.toLocaleString()}
+              {Number(stats.totalProducts || 0).toLocaleString()}
             </h2>
             <Package className="text-orange-500" />
           </div>

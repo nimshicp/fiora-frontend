@@ -10,8 +10,7 @@ import {
 import axios from "axios";
 import toast from "react-hot-toast";
 
-// ✅ UPDATED API
-const API_BASE = "http://localhost:8000/api/admin";
+const API_BASE = `${import.meta.env.VITE_BASE_URL}admin`;
 
 function AdminOrders() {
   const [orders, setOrders] = useState([]);
