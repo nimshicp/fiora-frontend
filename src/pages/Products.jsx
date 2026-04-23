@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Search, Menu, ChevronDown } from "lucide-react";
 import { useLocation } from "react-router-dom";
-import ProductCard from "../components/ProductCard";
+import ProductCard from "../components/productCard";
 import SkeletonProductCard from "../components/Skelton";
 import { getProducts, getProductsByCategory } from "../api/productApi";
 
